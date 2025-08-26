@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeNote2508</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <?!= include('Stylesheet'); ?>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .view { display: none; }
+        .view.active { display: flex; flex-direction: column; height: 100%; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+    <div id="app-container" class="flex h-screen">
+        <aside id="sidebar" class="bg-white w-64 flex-shrink-0 flex flex-col border-r border-slate-200">
+            <div class="p-4 flex items-center space-x-3 border-b border-slate-200">
+                <div class="bg-indigo-600 text-white p-2 rounded-lg"><i class="fas fa-book"></i></div>
+                <div><span class="text-xl font-bold text-indigo-700">DeNote2508</span><p id="user-display-name" class="text-xs text-slate-500 font-medium">by ...</p></div>
+            </div>
+            <nav class="flex-1 p-2"><ul id="main-nav">
+                <li><a href="#dashboard" class="nav-link flex items-center space-x-3 px-3 py-2.5 rounded-lg text-slate-600"><span>Dashboard</span></a></li>
+                <li><a href="#project-management" class="nav-link flex items-center space-x-3 px-3 py-2.5 rounded-lg text-slate-600"><span>Project Management</span></a></li>
+                <li><a href="#knowledge-base" class="nav-link flex items-center space-x-3 px-3 py-2.5 rounded-lg text-slate-600"><span>Knowledge Base</span></a></li>
+                <li><a href="#settings" class="nav-link flex items-center space-x-3 px-3 py-2.5 rounded-lg text-slate-600"><span>Settings</span></a></li>
+            </ul></nav>
+            <div class="p-4 border-t border-slate-200"><div class="flex items-center space-x-3">
+                <img id="user-avatar" src="https://placehold.co/40x40/E2E8F0/475569?text=U" alt="User Avatar" class="w-10 h-10 rounded-full">
+                <div><p id="user-profile-name" class="font-semibold text-slate-700">User</p><p id="user-profile-email" class="text-sm text-slate-500">user@example.com</p></div>
+            </div></div>
+        </aside>
+
+        <main id="main-content" class="flex-1 flex flex-col overflow-y-auto">
+            <div id="dashboard" class="view"><?!= include('DashboardView'); ?></div>
+            <div id="project-management" class="view"><?!= include('ProjectManagementView'); ?></div>
+            <div id="knowledge-base" class="view"><?!= include('KnowledgeBaseView'); ?></div>
+            <div id="settings" class="view"><?!= include('SettingsView'); ?></div>
+        </main>
+    </div>
+    <?!= include('ClientScript'); ?>
+</body>
+</html>

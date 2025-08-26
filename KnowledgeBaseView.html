@@ -1,0 +1,65 @@
+<!-- 
+  This file contains the HTML structure for the Knowledge Base view.
+  It will be dynamically loaded into the main content area of Index.html.
+-->
+
+<!-- Header -->
+<header class="bg-white/80 backdrop-blur-sm sticky top-0 z-10 p-4 sm:p-6 flex justify-between items-center border-b border-slate-200 flex-shrink-0">
+    <div class="flex items-center space-x-4">
+        <button id="menu-toggle-kb" class="text-slate-600 hover:text-slate-900 lg:hidden">
+            <i class="fas fa-bars text-xl"></i>
+        </button>
+        <h1 class="text-2xl font-bold text-slate-800">Knowledge Base</h1>
+    </div>
+    <div class="flex items-center space-x-2">
+        <div class="relative">
+            <select class="appearance-none bg-white border border-slate-300 rounded-lg py-2 pl-3 pr-8 text-slate-700 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-shadow">
+                <option>All Projects</option>
+                <option>Mobile App Redesign</option>
+                <option>Q4 Marketing Analytics</option>
+                <option>Database Migration Plan</option>
+            </select>
+            <i class="fas fa-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
+        </div>
+        <div class="relative">
+            <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+            <input type="text" placeholder="Search all files..." class="pl-10 pr-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-shadow w-full sm:w-56">
+        </div>
+    </div>
+</header>
+
+<!-- Page Content -->
+<div class="p-4 sm:p-6 flex flex-col h-full">
+    <!-- Filter Buttons -->
+    <div class="mb-4 flex flex-wrap gap-2">
+        <button class="px-3 py-1.5 text-sm font-semibold text-white bg-indigo-600 rounded-full">All Files</button>
+        <button class="px-3 py-1.5 text-sm font-semibold text-slate-600 bg-white rounded-full border border-slate-300 hover:bg-slate-50">Documents</button>
+        <button class="px-3 py-1.5 text-sm font-semibold text-slate-600 bg-white rounded-full border border-slate-300 hover:bg-slate-50">UI</button>
+        <button class="px-3 py-1.5 text-sm font-semibold text-slate-600 bg-white rounded-full border border-slate-300 hover:bg-slate-50">Code</button>
+        <button class="px-3 py-1.5 text-sm font-semibold text-slate-600 bg-white rounded-full border border-slate-300 hover:bg-slate-50">User Uploads</button>
+    </div>
+
+    <!-- Knowledge Base Table -->
+    <div class="flex-1 overflow-x-auto">
+        <div class="bg-white rounded-xl shadow-md">
+            <table class="w-full text-left" id="kb-table">
+                <thead class="bg-slate-50">
+                    <tr>
+                        <th class="p-4 font-semibold text-slate-600 sortable" data-column="0">Item <i class="fas fa-sort sort-icon"></i></th>
+                        <th class="p-4 font-semibold text-slate-600 sortable" data-column="1">Type <i class="fas fa-sort sort-icon"></i></th>
+                        <th class="p-4 font-semibold text-slate-600 sortable" data-column="2">Project <i class="fas fa-sort sort-icon"></i></th>
+                        <th class="p-4 font-semibold text-slate-600 sortable" data-column="3" data-sort-type="date">Created Date <i class="fas fa-sort sort-icon"></i></th>
+                        <th class="p-4 font-semibold text-slate-600 sortable sorted-desc" data-column="4" data-sort-type="date">Last Updated <i class="fas fa-sort-down sort-icon"></i></th>
+                        <th class="p-4 font-semibold text-slate-600"></th>
+                    </tr>
+                </thead>
+                <tbody id="kb-table-body">
+                    <!-- Table rows will be loaded here by JavaScript -->
+                    <tr>
+                        <td colspan="6" class="p-4 text-center text-slate-500">Loading knowledge base items...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

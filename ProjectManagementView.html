@@ -1,0 +1,46 @@
+<div id="project-list-view" class="flex flex-col h-full">
+    <header class="bg-white/80 backdrop-blur-sm sticky top-0 z-10 p-4 sm:p-6 flex justify-between items-center border-b border-slate-200 flex-shrink-0">
+        <h1 class="text-2xl font-bold text-slate-800">Project Management</h1>
+        <button id="new-project-btn" class="bg-indigo-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-indigo-700 flex items-center space-x-2">
+            <i class="fas fa-plus"></i>
+            <span>New Project</span>
+        </button>
+    </header>
+
+    <div class="p-4 sm:p-6 overflow-y-auto flex-1">
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200">
+            <table class="w-full text-left">
+                <thead class="bg-slate-50">
+                    <tr>
+                        <th class="p-4 font-semibold text-slate-600">Project Name</th>
+                        <th class="p-4 font-semibold text-slate-600">Created By</th>
+                        <th class="p-4 font-semibold text-slate-600">Last Activity</th>
+                        <th class="p-4 font-semibold text-slate-600 text-right">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="project-list-container">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="project-chat-view" class="hidden h-full flex flex-col bg-white">
+    <header class="p-4 sm:p-6 flex items-center space-x-4 border-b border-slate-200 flex-shrink-0">
+        <button class="back-to-list-btn text-slate-500 hover:text-indigo-600 p-2 -ml-2" title="Back to Project List"><i class="fas fa-arrow-left"></i></button>
+        <div>
+            <h1 id="chat-project-name" class="text-xl font-bold text-slate-800">Project Name</h1>
+        </div>
+    </header>
+
+    <div id="chat-container" class="flex-1 p-6 space-y-4 overflow-y-auto">
+        <p class="text-center text-slate-500">Chat history will appear here.</p>
+    </div>
+
+    <div class="p-4 bg-slate-50 border-t border-slate-200 flex-shrink-0">
+        <div class="relative">
+            <textarea id="chat-input" class="w-full p-3 pr-24 border border-slate-300 rounded-lg resize-none" rows="1" placeholder="Type your message..."></textarea>
+            <button id="send-chat-btn" class="absolute right-3 top-1/2 -translate-y-1/2 px-4 py-1.5 text-sm font-semibold text-white bg-indigo-600 rounded-lg hover:bg-indigo-700">Send</button>
+        </div>
+    </div>
+</div>
