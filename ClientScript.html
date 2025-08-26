@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
           document.getElementById('user-display-name').textContent = `by ${user.Display_Name}`;
           document.getElementById('user-profile-name').textContent = user.Display_Name;
           document.getElementById('user-profile-email').textContent = user.User_ID;
-          navigateTo('dashboard');
+          navigateTo('project-chat');
         } else { showError(mainContent, "Failed to retrieve user data."); }
       })
       .withFailureHandler(err => { showError(mainContent, `Could not load profile. Error: ${err.message}`); })
