@@ -1,0 +1,34 @@
+<script>
+  // ฟังก์ชันนี้จะทำงานเมื่อองค์ประกอบ HTML ทั้งหมดของหน้าเว็บโหลดเสร็จสมบูรณ์
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    // เนื่องจากปุ่ม Back ไม่มี ID เราจะเลือกจาก element ที่อยู่ข้างเคียงแทน
+    const backButton = document.querySelector('#project-chat-title').previousElementSibling; 
+    const projectFilesButton = document.getElementById('project-files-btn');
+    const chatHistoryButton = document.getElementById('chat-history-btn');
+
+    // เพิ่ม Event Listener เพื่อดักฟังการ 'คลิก' ที่ปุ่ม Back
+    if (backButton) {
+      backButton.addEventListener('click', function() {
+        alert('ปุ่ม Back ถูกคลิก!');
+        // ในอนาคต: โค้ดส่วนนี้จะใช้สำหรับกลับไปหน้า Project List
+      });
+    }
+
+    // เพิ่ม Event Listener เพื่อดักฟังการ 'คลิก' ที่ปุ่ม Project Files
+    if (projectFilesButton) {
+      projectFilesButton.addEventListener('click', function() {
+        alert('ปุ่ม Project Files ถูกคลิก!');
+        // ในอนาคต: โค้ดส่วนนี้จะใช้สำหรับเปิดหน้าต่างแสดงไฟล์
+      });
+    }
+
+    // เพิ่ม Event Listener เพื่อดักฟังการ 'คลิก' ที่ปุ่มประวัติการสนทนา
+    if (chatHistoryButton) {
+      chatHistoryButton.addEventListener('click', function() {
+        alert('ปุ่มประวัติการสนทนาถูกคลิก!');
+        // ในอนาคต: โค้ดส่วนนี้จะใช้สำหรับเปิด/ปิด Dropdown
+      });
+    }
+  });
+</script>
