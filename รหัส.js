@@ -1,3 +1,5 @@
+// ⚠️ แทนที่ด้วย ID ของ Google Sheet ของคุณ
+const SPREADSHEET_ID = '1uaMqwFkIQ3DzVUVP1wgyxaxcZe4qJGsoFq6lrvhKBCc'; 
 /**
  * @fileoverview Code.gs - Main server file for the DeNote2508 Web App.
  * Contains the main entry point for the web app and utility functions.

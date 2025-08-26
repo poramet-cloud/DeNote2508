@@ -1,0 +1,19 @@
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    loadCoachingReport();
+  });
+
+  function loadCoachingReport() {
+    const contentDiv = document.getElementById('co-pilot-card-content');
+    if (!contentDiv) return;
+
+    google.script.run
+      .withSuccessHandler(function(reportContent) {
+        contentDiv.innerText = reportContent;
+      })
+      .withFailureHandler(function(error) {
+        contentDiv.innerText = 'Error: ' + error.message;
+      })
+      .getLatestCoachingReport();
+  }
+</script>

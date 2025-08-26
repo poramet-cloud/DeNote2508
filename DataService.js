@@ -1,5 +1,4 @@
-// !! สำคัญ: แก้ไข SPREADSHEET_ID ให้เป็น ID ของไฟล์ Google Sheet Database ของคุณ !!
-const SPREADSHEET_ID = "1uaMqwFkIQ3DzVUVP1wgyxaxcZe4qJGsoFq6lrvhKBCc"; // <--- ตรวจสอบว่า ID นี้ถูกต้อง
+
 
 const SHEETS = {
   USERS: "App_Users_Master",
