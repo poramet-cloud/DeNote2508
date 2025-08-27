@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
           appState.currentUser = user;
           document.getElementById('user-display-name').textContent = `by ${user.display_Name}`;
           document.getElementById('user-profile-name').textContent = user.display_Name;
-          document.getElementById('user-profile-email').textContent = user.User_ID;
+          document.getElementById('user-profile-email').textContent = user.user_ID;
           navigateTo('project-chat');
         } else { showError(mainContent, "Failed to retrieve user data."); }
       })
