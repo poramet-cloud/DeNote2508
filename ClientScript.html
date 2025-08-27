@@ -130,10 +130,10 @@ document.addEventListener('DOMContentLoaded', () => {
     google.script.run
       .withSuccessHandler(user => {
         console.log('User data from server:', user); // <-- Add this line
-        if (user && user.Display_Name) {
+        if (user && user.display_Name) {
           appState.currentUser = user;
-          document.getElementById('user-display-name').textContent = `by ${user.Display_Name}`;
-          document.getElementById('user-profile-name').textContent = user.Display_Name;
+          document.getElementById('user-display-name').textContent = `by ${user.display_Name}`;
+          document.getElementById('user-profile-name').textContent = user.display_Name;
           document.getElementById('user-profile-email').textContent = user.User_ID;
           navigateTo('project-chat');
         } else { showError(mainContent, "Failed to retrieve user data."); }
