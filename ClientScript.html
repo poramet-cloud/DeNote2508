@@ -129,6 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- INITIAL LOAD ---
     google.script.run
       .withSuccessHandler(user => {
+        console.log('User data from server:', user); // <-- Add this line
         if (user && user.Display_Name) {
           appState.currentUser = user;
           document.getElementById('user-display-name').textContent = `by ${user.Display_Name}`;
